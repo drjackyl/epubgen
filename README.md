@@ -1,2 +1,2 @@
 # epubgen
-A Swift 3-based command-line generator for EPUBs.
+A command-line generator for EPUBs
