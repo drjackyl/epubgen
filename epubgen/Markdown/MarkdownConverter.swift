@@ -1,9 +1,3 @@
-import Foundation
-
-
-
-
-
 protocol MarkdownConverter {
     
     /**

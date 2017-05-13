@@ -1,9 +1,3 @@
-import Foundation
-
-
-
-
-
 /**
  A wrapper-class for whatever markdown-renderer is used
  */

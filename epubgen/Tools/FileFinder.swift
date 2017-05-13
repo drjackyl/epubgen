@@ -28,7 +28,8 @@ class FileFinder {
             do {
                 let urls = try self.fileIO.contentsOfDirectory(at: url, includingPropertiesForKeys: [URLResourceKey.isRegularFileKey], options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
                 let fileURLs = self.filterFileURLs(urls: urls)
-                completion(fileURLs, nil)
+                let standardizedFileURLs = fileURLs.map({ $0.standardizedFileURL })
+                completion(standardizedFileURLs, nil)
             } catch let error {
                 completion([URL](), error)
             }
@@ -58,7 +59,8 @@ class FileFinder {
             do {
                 let urls = try self.fileIO.contentsOfDirectory(at: url, includingPropertiesForKeys: [URLResourceKey.isRegularFileKey], options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
                 let fileURLs = self.filterFileURLs(urls: urls, ofType: type)
-                completion(fileURLs, nil)
+                let standardizedFileURLs = fileURLs.map({ $0.standardizedFileURL })
+                completion(standardizedFileURLs, nil)
             } catch let error {
                 completion([URL](), error)
             }
@@ -86,13 +88,13 @@ class FileFinder {
                 return
             }
             while let object = enumerator.nextObject() {
-                guard let url = object as? URL else {
+                guard let childUrl = object as? URL else {
                     continue
                 }
-                guard let isFile = url.isRegularFileResourceValue, isFile else {
+                guard let isFile = childUrl.isRegularFileResourceValue, isFile else {
                     continue
                 }
-                urls.append(url)
+                urls.append(childUrl.standardizedFileURL.relativeTo(baseUrl: url)!)
             }
             completion(urls, nil)
         }

@@ -20,6 +20,29 @@ if CommandLine.arguments[1] == "--help" {
     exit(EXIT_SUCCESS)
 }
 
+if CommandLine.arguments[1] == "--create-configfile" {
+    let sampleConfig = Config.createSampleConfig()
+    let destinationUrl = URL(fileURLWithPath: "epubgen.cfg")
+    if FileManager.default.fileExists(atPath: destinationUrl.path) {
+        Output.printStdErr(message: "File already exists")
+        exit(EXIT_FAILURE)
+    }
+    
+    do {
+        try sampleConfig.write(to: destinationUrl, atomically: true, encoding: String.Encoding.utf8)
+    } catch let error {
+        var errorMessage = ""
+        errorMessage += "Failed to create config-gile at\n"
+        errorMessage += "    \(destinationUrl.path)\n"
+        errorMessage += "\(error)"
+        Output.printStdErr(message: errorMessage)
+        exit(EXIT_FAILURE)
+    }
+    
+    Output.printStdOut(message: "Configfile epubgen.cfg created")
+    exit(EXIT_SUCCESS)
+}
+
 //Output.debugOutputEnabled = true
 
 let generator = epubgen()

@@ -16,7 +16,7 @@ class TemporaryDirectory {
     let url: URL
     
     class func create() throws -> TemporaryDirectory {
-        let tmpUrl = URL(fileURLWithPath: Constants.bundleId, relativeTo: FileManager.default.temporaryDirectory).appendingPathComponent(UUID().uuidString)
+        let tmpUrl = URL(fileURLWithPath: Constants.bundleId, relativeTo: temporaryDirectory).appendingPathComponent(UUID().uuidString)
         try FileManager.default.createDirectory(at: tmpUrl, withIntermediateDirectories: true, attributes: [:])
         return TemporaryDirectory(url: tmpUrl)
     }
@@ -45,6 +45,15 @@ class TemporaryDirectory {
     
     fileprivate init(url: URL) {
         self.url = url
+    }
+    
+    /**
+     Convenience-property for the temporary directory
+     */
+    fileprivate class var temporaryDirectory: URL {
+        get {
+            return FileManager.default.temporaryDirectory.standardizedFileURL
+        }
     }
     
 }
