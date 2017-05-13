@@ -1,9 +1,3 @@
-import Foundation
-
-
-
-
-
 /**
  Wrapper for Markdown-converter-implementations
  */

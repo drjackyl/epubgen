@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC0651E51EC626B300C41CBB /* ZZAESDecryptInputStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC0651BC1EC626B300C41CBB /* ZZAESDecryptInputStream.mm */; };
+		DC0651E61EC626B300C41CBB /* ZZArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC0651BE1EC626B300C41CBB /* ZZArchive.mm */; };
+		DC0651E71EC626B300C41CBB /* ZZArchiveEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651C01EC626B300C41CBB /* ZZArchiveEntry.m */; };
+		DC0651E81EC626B300C41CBB /* ZZConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651C51EC626B300C41CBB /* ZZConstants.m */; };
+		DC0651E91EC626B300C41CBB /* ZZDataChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651C71EC626B300C41CBB /* ZZDataChannel.m */; };
+		DC0651EA1EC626B300C41CBB /* ZZDataChannelOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651C91EC626B300C41CBB /* ZZDataChannelOutput.m */; };
+		DC0651EB1EC626B300C41CBB /* ZZDeflateOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651CC1EC626B300C41CBB /* ZZDeflateOutputStream.m */; };
+		DC0651EC1EC626B300C41CBB /* ZZError.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651CE1EC626B300C41CBB /* ZZError.m */; };
+		DC0651ED1EC626B300C41CBB /* ZZFileChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651D01EC626B300C41CBB /* ZZFileChannel.m */; };
+		DC0651EE1EC626B300C41CBB /* ZZFileChannelOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651D21EC626B300C41CBB /* ZZFileChannelOutput.m */; };
+		DC0651EF1EC626B300C41CBB /* ZZInflateInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651D51EC626B300C41CBB /* ZZInflateInputStream.m */; };
+		DC0651F01EC626B300C41CBB /* ZZNewArchiveEntry.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC0651D71EC626B300C41CBB /* ZZNewArchiveEntry.mm */; };
+		DC0651F11EC626B300C41CBB /* ZZNewArchiveEntryWriter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC0651D91EC626B300C41CBB /* ZZNewArchiveEntryWriter.mm */; };
+		DC0651F21EC626B300C41CBB /* ZZOldArchiveEntry.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC0651DB1EC626B300C41CBB /* ZZOldArchiveEntry.mm */; };
+		DC0651F31EC626B300C41CBB /* ZZOldArchiveEntryWriter.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC0651DD1EC626B300C41CBB /* ZZOldArchiveEntryWriter.mm */; };
+		DC0651F41EC626B300C41CBB /* ZZStandardCryptoEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC0651DF1EC626B300C41CBB /* ZZStandardCryptoEngine.cpp */; };
+		DC0651F51EC626B300C41CBB /* ZZStandardDecryptInputStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC0651E21EC626B300C41CBB /* ZZStandardDecryptInputStream.mm */; };
+		DC0651F61EC626B300C41CBB /* ZZStoreOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0651E41EC626B300C41CBB /* ZZStoreOutputStream.m */; };
+		DC0651FA1EC6274400C41CBB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0651F91EC6274400C41CBB /* libz.tbd */; };
+		DC0651FF1EC62CBB00C41CBB /* EpubPacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0651FE1EC62CBB00C41CBB /* EpubPacker.swift */; };
+		DC0652011EC62E2E00C41CBB /* ZipZapEpubPacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0652001EC62E2E00C41CBB /* ZipZapEpubPacker.swift */; };
+		DC0652031EC62E8A00C41CBB /* Packer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0652021EC62E8A00C41CBB /* Packer.swift */; };
 		DC1D61B81E72AA080048EE84 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D61B71E72AA080048EE84 /* main.swift */; };
 		DC1D61BF1E72AA350048EE84 /* epubgen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D61BE1E72AA350048EE84 /* epubgen.swift */; };
 		DC1D61FD1E731CD20048EE84 /* ContentOpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D61FC1E731CD20048EE84 /* ContentOpf.swift */; };
@@ -117,6 +139,54 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC0651BA1EC626B300C41CBB /* ZipZap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipZap.h; sourceTree = "<group>"; };
+		DC0651BB1EC626B300C41CBB /* ZZAESDecryptInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAESDecryptInputStream.h; sourceTree = "<group>"; };
+		DC0651BC1EC626B300C41CBB /* ZZAESDecryptInputStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZZAESDecryptInputStream.mm; sourceTree = "<group>"; };
+		DC0651BD1EC626B300C41CBB /* ZZArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZArchive.h; sourceTree = "<group>"; };
+		DC0651BE1EC626B300C41CBB /* ZZArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZZArchive.mm; sourceTree = "<group>"; };
+		DC0651BF1EC626B300C41CBB /* ZZArchiveEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZArchiveEntry.h; sourceTree = "<group>"; };
+		DC0651C01EC626B300C41CBB /* ZZArchiveEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZArchiveEntry.m; sourceTree = "<group>"; };
+		DC0651C11EC626B300C41CBB /* ZZArchiveEntryWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZArchiveEntryWriter.h; sourceTree = "<group>"; };
+		DC0651C21EC626B300C41CBB /* ZZChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZChannel.h; sourceTree = "<group>"; };
+		DC0651C31EC626B300C41CBB /* ZZChannelOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZChannelOutput.h; sourceTree = "<group>"; };
+		DC0651C41EC626B300C41CBB /* ZZConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZConstants.h; sourceTree = "<group>"; };
+		DC0651C51EC626B300C41CBB /* ZZConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZConstants.m; sourceTree = "<group>"; };
+		DC0651C61EC626B300C41CBB /* ZZDataChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDataChannel.h; sourceTree = "<group>"; };
+		DC0651C71EC626B300C41CBB /* ZZDataChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDataChannel.m; sourceTree = "<group>"; };
+		DC0651C81EC626B300C41CBB /* ZZDataChannelOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDataChannelOutput.h; sourceTree = "<group>"; };
+		DC0651C91EC626B300C41CBB /* ZZDataChannelOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDataChannelOutput.m; sourceTree = "<group>"; };
+		DC0651CA1EC626B300C41CBB /* ZZDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDataProvider.h; sourceTree = "<group>"; };
+		DC0651CB1EC626B300C41CBB /* ZZDeflateOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDeflateOutputStream.h; sourceTree = "<group>"; };
+		DC0651CC1EC626B300C41CBB /* ZZDeflateOutputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDeflateOutputStream.m; sourceTree = "<group>"; };
+		DC0651CD1EC626B300C41CBB /* ZZError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZError.h; sourceTree = "<group>"; };
+		DC0651CE1EC626B300C41CBB /* ZZError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZError.m; sourceTree = "<group>"; };
+		DC0651CF1EC626B300C41CBB /* ZZFileChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZFileChannel.h; sourceTree = "<group>"; };
+		DC0651D01EC626B300C41CBB /* ZZFileChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZFileChannel.m; sourceTree = "<group>"; };
+		DC0651D11EC626B300C41CBB /* ZZFileChannelOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZFileChannelOutput.h; sourceTree = "<group>"; };
+		DC0651D21EC626B300C41CBB /* ZZFileChannelOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZFileChannelOutput.m; sourceTree = "<group>"; };
+		DC0651D31EC626B300C41CBB /* ZZHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZHeaders.h; sourceTree = "<group>"; };
+		DC0651D41EC626B300C41CBB /* ZZInflateInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZInflateInputStream.h; sourceTree = "<group>"; };
+		DC0651D51EC626B300C41CBB /* ZZInflateInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZInflateInputStream.m; sourceTree = "<group>"; };
+		DC0651D61EC626B300C41CBB /* ZZNewArchiveEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewArchiveEntry.h; sourceTree = "<group>"; };
+		DC0651D71EC626B300C41CBB /* ZZNewArchiveEntry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZZNewArchiveEntry.mm; sourceTree = "<group>"; };
+		DC0651D81EC626B300C41CBB /* ZZNewArchiveEntryWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewArchiveEntryWriter.h; sourceTree = "<group>"; };
+		DC0651D91EC626B300C41CBB /* ZZNewArchiveEntryWriter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZZNewArchiveEntryWriter.mm; sourceTree = "<group>"; };
+		DC0651DA1EC626B300C41CBB /* ZZOldArchiveEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZOldArchiveEntry.h; sourceTree = "<group>"; };
+		DC0651DB1EC626B300C41CBB /* ZZOldArchiveEntry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZZOldArchiveEntry.mm; sourceTree = "<group>"; };
+		DC0651DC1EC626B300C41CBB /* ZZOldArchiveEntryWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZOldArchiveEntryWriter.h; sourceTree = "<group>"; };
+		DC0651DD1EC626B300C41CBB /* ZZOldArchiveEntryWriter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZZOldArchiveEntryWriter.mm; sourceTree = "<group>"; };
+		DC0651DE1EC626B300C41CBB /* ZZScopeGuard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZScopeGuard.h; sourceTree = "<group>"; };
+		DC0651DF1EC626B300C41CBB /* ZZStandardCryptoEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZZStandardCryptoEngine.cpp; sourceTree = "<group>"; };
+		DC0651E01EC626B300C41CBB /* ZZStandardCryptoEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZStandardCryptoEngine.h; sourceTree = "<group>"; };
+		DC0651E11EC626B300C41CBB /* ZZStandardDecryptInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZStandardDecryptInputStream.h; sourceTree = "<group>"; };
+		DC0651E21EC626B300C41CBB /* ZZStandardDecryptInputStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZZStandardDecryptInputStream.mm; sourceTree = "<group>"; };
+		DC0651E31EC626B300C41CBB /* ZZStoreOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZStoreOutputStream.h; sourceTree = "<group>"; };
+		DC0651E41EC626B300C41CBB /* ZZStoreOutputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZStoreOutputStream.m; sourceTree = "<group>"; };
+		DC0651F71EC626CE00C41CBB /* epubgen-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "epubgen-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC0651F91EC6274400C41CBB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		DC0651FE1EC62CBB00C41CBB /* EpubPacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpubPacker.swift; sourceTree = "<group>"; };
+		DC0652001EC62E2E00C41CBB /* ZipZapEpubPacker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipZapEpubPacker.swift; sourceTree = "<group>"; };
+		DC0652021EC62E8A00C41CBB /* Packer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packer.swift; sourceTree = "<group>"; };
 		DC1D61B41E72AA080048EE84 /* epubgen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = epubgen; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1D61B71E72AA080048EE84 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DC1D61BE1E72AA350048EE84 /* epubgen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = epubgen.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -138,7 +208,6 @@
 		DC2A39651E749EBE00643120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC2A399F1E7688AA00643120 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC2A39A11E768C6900643120 /* FileTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
-		DC4093F71EC3A9830020EC34 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		DC4093F81EC3B7C40020EC34 /* TextFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFileReader.swift; sourceTree = "<group>"; };
 		DC4093FC1EC3B7DF0020EC34 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		DC4093FD1EC3B7DF0020EC34 /* ConfigFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFileParser.swift; sourceTree = "<group>"; };
@@ -217,6 +286,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC0651FA1EC6274400C41CBB /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,14 +300,82 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC0651B81EC626B300C41CBB /* ZipZap */ = {
+			isa = PBXGroup;
+			children = (
+				DC0651BA1EC626B300C41CBB /* ZipZap.h */,
+				DC0651BB1EC626B300C41CBB /* ZZAESDecryptInputStream.h */,
+				DC0651BC1EC626B300C41CBB /* ZZAESDecryptInputStream.mm */,
+				DC0651BD1EC626B300C41CBB /* ZZArchive.h */,
+				DC0651BE1EC626B300C41CBB /* ZZArchive.mm */,
+				DC0651BF1EC626B300C41CBB /* ZZArchiveEntry.h */,
+				DC0651C01EC626B300C41CBB /* ZZArchiveEntry.m */,
+				DC0651C11EC626B300C41CBB /* ZZArchiveEntryWriter.h */,
+				DC0651C21EC626B300C41CBB /* ZZChannel.h */,
+				DC0651C31EC626B300C41CBB /* ZZChannelOutput.h */,
+				DC0651C41EC626B300C41CBB /* ZZConstants.h */,
+				DC0651C51EC626B300C41CBB /* ZZConstants.m */,
+				DC0651C61EC626B300C41CBB /* ZZDataChannel.h */,
+				DC0651C71EC626B300C41CBB /* ZZDataChannel.m */,
+				DC0651C81EC626B300C41CBB /* ZZDataChannelOutput.h */,
+				DC0651C91EC626B300C41CBB /* ZZDataChannelOutput.m */,
+				DC0651CA1EC626B300C41CBB /* ZZDataProvider.h */,
+				DC0651CB1EC626B300C41CBB /* ZZDeflateOutputStream.h */,
+				DC0651CC1EC626B300C41CBB /* ZZDeflateOutputStream.m */,
+				DC0651CD1EC626B300C41CBB /* ZZError.h */,
+				DC0651CE1EC626B300C41CBB /* ZZError.m */,
+				DC0651CF1EC626B300C41CBB /* ZZFileChannel.h */,
+				DC0651D01EC626B300C41CBB /* ZZFileChannel.m */,
+				DC0651D11EC626B300C41CBB /* ZZFileChannelOutput.h */,
+				DC0651D21EC626B300C41CBB /* ZZFileChannelOutput.m */,
+				DC0651D31EC626B300C41CBB /* ZZHeaders.h */,
+				DC0651D41EC626B300C41CBB /* ZZInflateInputStream.h */,
+				DC0651D51EC626B300C41CBB /* ZZInflateInputStream.m */,
+				DC0651D61EC626B300C41CBB /* ZZNewArchiveEntry.h */,
+				DC0651D71EC626B300C41CBB /* ZZNewArchiveEntry.mm */,
+				DC0651D81EC626B300C41CBB /* ZZNewArchiveEntryWriter.h */,
+				DC0651D91EC626B300C41CBB /* ZZNewArchiveEntryWriter.mm */,
+				DC0651DA1EC626B300C41CBB /* ZZOldArchiveEntry.h */,
+				DC0651DB1EC626B300C41CBB /* ZZOldArchiveEntry.mm */,
+				DC0651DC1EC626B300C41CBB /* ZZOldArchiveEntryWriter.h */,
+				DC0651DD1EC626B300C41CBB /* ZZOldArchiveEntryWriter.mm */,
+				DC0651DE1EC626B300C41CBB /* ZZScopeGuard.h */,
+				DC0651DF1EC626B300C41CBB /* ZZStandardCryptoEngine.cpp */,
+				DC0651E01EC626B300C41CBB /* ZZStandardCryptoEngine.h */,
+				DC0651E11EC626B300C41CBB /* ZZStandardDecryptInputStream.h */,
+				DC0651E21EC626B300C41CBB /* ZZStandardDecryptInputStream.mm */,
+				DC0651E31EC626B300C41CBB /* ZZStoreOutputStream.h */,
+				DC0651E41EC626B300C41CBB /* ZZStoreOutputStream.m */,
+			);
+			path = ZipZap;
+			sourceTree = "<group>";
+		};
+		DC0651F81EC6274400C41CBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC0651F91EC6274400C41CBB /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC0651FD1EC62CBB00C41CBB /* EpubPacker */ = {
+			isa = PBXGroup;
+			children = (
+				DC0651FE1EC62CBB00C41CBB /* EpubPacker.swift */,
+				DC0652001EC62E2E00C41CBB /* ZipZapEpubPacker.swift */,
+				DC0652021EC62E8A00C41CBB /* Packer.swift */,
+			);
+			path = EpubPacker;
+			sourceTree = "<group>";
+		};
 		DC1D61AB1E72AA080048EE84 = {
 			isa = PBXGroup;
 			children = (
 				DCD2D9E41EC4EEC300191A7D /* Libraries */,
-				DC4093F71EC3A9830020EC34 /* Resources */,
 				DC1D61B61E72AA080048EE84 /* epubgen */,
 				DC2A39621E749EBE00643120 /* epubgen-tests */,
 				DC1D61B51E72AA080048EE84 /* Products */,
+				DC0651F81EC6274400C41CBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,6 +391,7 @@
 		DC1D61B61E72AA080048EE84 /* epubgen */ = {
 			isa = PBXGroup;
 			children = (
+				DC0651FD1EC62CBB00C41CBB /* EpubPacker */,
 				DC4093FB1EC3B7DF0020EC34 /* Config */,
 				DC1D61FB1E731CC60048EE84 /* EPUB */,
 				DC1D61BE1E72AA350048EE84 /* epubgen.swift */,
@@ -263,6 +402,7 @@
 				DCC7079A1EC10C9B00C9D43E /* Markdown */,
 				DC1D62111E7371270048EE84 /* Tools */,
 				DC1D61FE1E731D630048EE84 /* XmlConvertible.swift */,
+				DC0651F71EC626CE00C41CBB /* epubgen-Bridging-Header.h */,
 			);
 			path = epubgen;
 			sourceTree = "<group>";
@@ -350,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				DCD2D9E51EC4EEC300191A7D /* Down */,
+				DC0651B81EC626B300C41CBB /* ZipZap */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -501,7 +642,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = drjackyl.de;
 				TargetAttributes = {
 					DC1D61B31E72AA080048EE84 = {
@@ -551,10 +692,13 @@
 			files = (
 				DCD2DA301EC4EEC300191A7D /* latex.c in Sources */,
 				DC1D61FF1E731D630048EE84 /* XmlConvertible.swift in Sources */,
+				DC0651EB1EC626B300C41CBB /* ZZDeflateOutputStream.m in Sources */,
+				DC0651F51EC626B300C41CBB /* ZZStandardDecryptInputStream.mm in Sources */,
 				DCD2DA2F1EC4EEC300191A7D /* iterator.c in Sources */,
 				DC2A39A01E7688AA00643120 /* Constants.swift in Sources */,
 				DCC7079C1EC10C9B00C9D43E /* PlainMarkdown.swift in Sources */,
 				DCD2DA321EC4EEC300191A7D /* node.c in Sources */,
+				DC0651E51EC626B300C41CBB /* ZZAESDecryptInputStream.mm in Sources */,
 				DC2A39A21E768C6900643120 /* FileTypes.swift in Sources */,
 				DCD2DA341EC4EEC300191A7D /* render.c in Sources */,
 				DCD2DA3A1EC4EEC300191A7D /* DownOptions.swift in Sources */,
@@ -567,31 +711,44 @@
 				DC1D62061E7360A90048EE84 /* ContentOpfManifest.swift in Sources */,
 				DCD2DA2C1EC4EEC300191A7D /* houdini_html_u.c in Sources */,
 				DCD2DA401EC4EEC300191A7D /* DownGroffRenderable.swift in Sources */,
+				DC0651EE1EC626B300C41CBB /* ZZFileChannelOutput.m in Sources */,
 				DC1D620A1E7367F10048EE84 /* TocXhtml.swift in Sources */,
 				DCD2DA3F1EC4EEC300191A7D /* DownCommonMarkRenderable.swift in Sources */,
 				DCD2DA241EC4EEC300191A7D /* buffer.c in Sources */,
 				DCC707961EC1064000C9D43E /* XhtmlDocument.swift in Sources */,
 				DCD2DA3B1EC4EEC300191A7D /* NSAttributedString+HTML.swift in Sources */,
+				DC0652011EC62E2E00C41CBB /* ZipZapEpubPacker.swift in Sources */,
 				DC2A395C1E7494DE00643120 /* FileFinder.swift in Sources */,
 				DC1D62041E734B140048EE84 /* Xml.swift in Sources */,
 				DC1D62161E7371570048EE84 /* Output.swift in Sources */,
 				DC1D62151E7371570048EE84 /* DispatchQueueFactory.swift in Sources */,
+				DC0651EC1EC626B300C41CBB /* ZZError.m in Sources */,
 				DCD2DA451EC4EEC300191A7D /* DownView.swift in Sources */,
 				DCD2DA2A1EC4EEC300191A7D /* houdini_href_e.c in Sources */,
 				DCD2DA311EC4EEC300191A7D /* man.c in Sources */,
+				DC0651F21EC626B300C41CBB /* ZZOldArchiveEntry.mm in Sources */,
+				DC0651F61EC626B300C41CBB /* ZZStoreOutputStream.m in Sources */,
+				DC0651F41EC626B300C41CBB /* ZZStandardCryptoEngine.cpp in Sources */,
 				DCD2DA2D1EC4EEC300191A7D /* html.c in Sources */,
 				DC4094001EC3B7DF0020EC34 /* ConfigFileParser.swift in Sources */,
 				DC1D620E1E73707F0048EE84 /* String.swift in Sources */,
 				DCD2DA431EC4EEC300191A7D /* DownRenderable.swift in Sources */,
 				DCD2DA3D1EC4EEC300191A7D /* DownASTRenderable.swift in Sources */,
 				DC4093FE1EC3B7DF0020EC34 /* Config.swift in Sources */,
+				DC0651E71EC626B300C41CBB /* ZZArchiveEntry.m in Sources */,
 				DCD2DA3C1EC4EEC300191A7D /* String+ToHTML.swift in Sources */,
 				DCD2DA421EC4EEC300191A7D /* DownLaTeXRenderable.swift in Sources */,
+				DC0651E61EC626B300C41CBB /* ZZArchive.mm in Sources */,
 				DCD2DA331EC4EEC300191A7D /* references.c in Sources */,
+				DC0651F11EC626B300C41CBB /* ZZNewArchiveEntryWriter.mm in Sources */,
 				DC8352FF1E9EA273005F54CB /* EpubWriter.swift in Sources */,
 				DCD2DA391EC4EEC300191A7D /* DownErrors.swift in Sources */,
 				DCD2DA281EC4EEC300191A7D /* commonmark.c in Sources */,
+				DC0651FF1EC62CBB00C41CBB /* EpubPacker.swift in Sources */,
+				DC0651E91EC626B300C41CBB /* ZZDataChannel.m in Sources */,
 				DCD2DA2B1EC4EEC300191A7D /* houdini_html_e.c in Sources */,
+				DC0652031EC62E8A00C41CBB /* Packer.swift in Sources */,
+				DC0651F01EC626B300C41CBB /* ZZNewArchiveEntry.mm in Sources */,
 				DC1D62171E7371570048EE84 /* RegEx.swift in Sources */,
 				DCD2DA371EC4EEC300191A7D /* xml.c in Sources */,
 				DC8E11B61E7A844300BC5D25 /* TemporaryDirectory.swift in Sources */,
@@ -607,11 +764,16 @@
 				DC1D620C1E736CF10048EE84 /* Epub.swift in Sources */,
 				DCD2DA441EC4EEC300191A7D /* DownXMLRenderable.swift in Sources */,
 				DCD2DA231EC4EEC300191A7D /* blocks.c in Sources */,
+				DC0651F31EC626B300C41CBB /* ZZOldArchiveEntryWriter.mm in Sources */,
 				DC4093F91EC3B7C40020EC34 /* TextFileReader.swift in Sources */,
+				DC0651E81EC626B300C41CBB /* ZZConstants.m in Sources */,
 				DC8353111EA2414D005F54CB /* URL.swift in Sources */,
+				DC0651EF1EC626B300C41CBB /* ZZInflateInputStream.m in Sources */,
 				DCD2DA381EC4EEC300191A7D /* Down.swift in Sources */,
+				DC0651EA1EC626B300C41CBB /* ZZDataChannelOutput.m in Sources */,
 				DCD2DA361EC4EEC300191A7D /* utf8.c in Sources */,
 				DCD2DA2E1EC4EEC300191A7D /* inlines.c in Sources */,
+				DC0651ED1EC626B300C41CBB /* ZZFileChannel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +904,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -751,6 +914,7 @@
 				DEVELOPMENT_TEAM = 5ZJJU69C7F;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Libraries/Down/cmark";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/epubgen/epubgen-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -761,6 +925,7 @@
 				DEVELOPMENT_TEAM = 5ZJJU69C7F;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Libraries/Down/cmark";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/epubgen/epubgen-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

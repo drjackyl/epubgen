@@ -40,6 +40,7 @@ class epubgen {
     var config = Config()
     var filesToProcess = [URL]()
     var filesToInclude = [EpubFileInclude]()
+    var workingDirectory: TemporaryDirectory? = nil
     var completion: ((Void) -> Void)?
     
     fileprivate func parseConfig(configString: String) {
@@ -59,11 +60,11 @@ class epubgen {
             
             Output.printStdOut(message: "Found \(fileURLs.count) files")
             self.filesToProcess = fileURLs
-            self.generateEpub()
+            self.generatePackage()
         })
     }
     
-    fileprivate func generateEpub() {
+    fileprivate func generatePackage() {
         Output.printStdOut(message: "Generating package")
         dispatchQueue.async {
             let epub = Epub()
@@ -75,11 +76,17 @@ class epubgen {
             epub.contentOpf.manifest.addNavItem(id: tocXhtmlId, href: "toc.xhtml", mediaType: MimeTypes.xhtml)
             
             do {
-                let tempDir = try TemporaryDirectory.create()
-                let writer = EpubWriter(epub: epub, destination: tempDir.url, filesToInclude: self.filesToInclude)
+                self.workingDirectory = try TemporaryDirectory.create()
+                let writer = EpubWriter(epub: epub, destination: self.workingDirectory!.url, filesToInclude: self.filesToInclude)
                 writer.write(completion: { (error) in
-                    Output.printStdOut(message: "Created package at \(tempDir.url.path)")
-                    self.finish()
+                    if let error = error {
+                        Output.printStdErr(message: "Failed to write package:\n    \(error)")
+                        Output.printStdErr(message: "aborting.")
+                        self.finish()
+                    } else {
+                        Output.printStdOut(message: "Created package at \(self.workingDirectory!.url.path)")
+                        self.packEpub()
+                    }
                 })
             } catch {
                 Output.printStdErr(message: "\(error)")
@@ -157,7 +164,45 @@ class epubgen {
         }
     }
     
+    fileprivate func packEpub() {
+        let destinationUrl = getDestinationUrlForEpubFile()
+        Packer.epub.packPackage(at: self.workingDirectory!.url, to: destinationUrl, completion: { (error) in
+            if let error = error {
+                Output.printStdErr(message: "Failed to create epub\n    \(error)")
+                Output.printStdErr(message: "aborting.")
+                self.finish()
+            } else {
+                Output.printStdOut(message: "Created epub at \(destinationUrl.path)")
+                self.finish()
+            }
+        })
+    }
+    
+    fileprivate func getDestinationUrlForEpubFile() -> URL {
+        if let filenameInConfig = config.epubFilename {
+            return URL(fileURLWithPath: filenameInConfig, relativeTo: self.sourceDirectory)
+        } else {
+            return URL(fileURLWithPath: "\(UUID().uuidString).epub", relativeTo: self.sourceDirectory)
+        }
+    }
+    
     fileprivate func finish() {
+        if let workingDir = self.workingDirectory {
+            if FileManager.default.fileExists(atPath: workingDir.url.path) {
+                do {
+                    try workingDir.delete()
+                    Output.printStdOut(message: "Temporary files deleted")
+                } catch let error {
+                    var errorMessage = ""
+                    errorMessage += "Failed to delete temporary files at\n"
+                    errorMessage += "    \(workingDir.url.path)\n"
+                    errorMessage += "\(error)\n"
+                    errorMessage += "\n"
+                    errorMessage += "Those files will be deleted by macOS after three days."
+                    Output.printStdErr(message: errorMessage)
+                }
+            }
+        }
         completion?()
     }
     
