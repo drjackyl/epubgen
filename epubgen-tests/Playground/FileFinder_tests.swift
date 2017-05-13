@@ -20,7 +20,7 @@ class FileFinder_tests: XCTestCase {
         }
         
         waitForExpectations(timeout: 1) { (error) in
-            print("\(error)")
+            print("\(error as Optional)")
         }
         
     }
@@ -40,7 +40,7 @@ class FileFinder_tests: XCTestCase {
         }
         
         waitForExpectations(timeout: 1) { (error) in
-            print("\(error)")
+            print("\(error as Optional)")
         }
     }
     
@@ -60,7 +60,25 @@ class FileFinder_tests: XCTestCase {
         })
         
         waitForExpectations(timeout: 1) { (error) in
-            print("\(error)")
+            print("\(error as Optional)")
+        }
+    }
+    
+    func testDirectoryEnumerator() {
+        let url = URL(fileURLWithPath: "/Users/felix/Entwicklung/Owen/Xcode/epubgen/Resources/epub")
+        let enumerator = FileManager.default.enumerator(at: url,
+                                                          includingPropertiesForKeys: [URLResourceKey.isRegularFileKey, URLResourceKey.isDirectoryKey],
+                                                          options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles,
+                                                          errorHandler: nil)
+        while let object = enumerator?.nextObject() {
+            guard let url = object as? URL else {
+                print("Guard failed, SKIPPING")
+                continue
+            }
+            guard let isFile = url.isRegularFileResourceValue, isFile else {
+                continue
+            }
+            print("\(url)")
         }
     }
     

@@ -12,9 +12,7 @@ class ConfigFileParser {
      Parses a config-file-string into a Config-instance
      
      - Parameter contents: The contents of a config-file.
-     
      - Parameter completion: The completion-handler providing a Config-instance.
-     
      - Parameter config: The Config-instance initialized with the parsed data.
      */
     func parse(configFile contents: String, completion: @escaping (_ config: Config) -> Void) {
