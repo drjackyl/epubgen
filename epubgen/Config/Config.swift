@@ -45,6 +45,9 @@ class Config: CustomStringConvertible, CustomDebugStringConvertible {
     /// The path (within the package) to the cover-image-file
     var coverImageFilePath = ""
     
+    /// An optional CSS-file to add to generated XHTML-files
+    var style: String? = nil
+    
     /// A dictionary mapping content-filenames to toc-entries
     var tocEntries = [String: String]()
     
@@ -99,8 +102,12 @@ class Config: CustomStringConvertible, CustomDebugStringConvertible {
             self.coverImageFilePath = cover
         }
         
+        if let style = configDictionary["style"] {
+            self.style = style
+        }
+        
         configDictionary.keys.forEach { (key) in
-            if key.hasSuffix(".xhtml") {
+            if key.hasSuffix(".\(FileExtensions.xhtml)") || key.hasSuffix(".\(FileExtensions.md)") {
                 self.tocEntries.updateValue(configDictionary[key]!, forKey: key)
             }
         }
@@ -122,6 +129,7 @@ class Config: CustomStringConvertible, CustomDebugStringConvertible {
                 "    date: \"\(date)\"\n" +
                 "    identifier: \"\(identifier)\"\n" +
                 "    cover: \"\(coverImageFilePath)\"\n" +
+                "    style: \"\(style ?? "<not configured>")" +
                 tocEntries.reduce("    tocEntries:\n") { (current, element: (key: String, value: String)) -> String in
                     return current + "        \(element.key): \(element.value)\n"
             }
@@ -140,6 +148,7 @@ class Config: CustomStringConvertible, CustomDebugStringConvertible {
                 "    date: \"\(date)\"\n" +
                 "    identifier: \"\(identifier)\"\n" +
                 "    cover: \"\(coverImageFilePath)\"\n" +
+                "    style: \"\(style ?? "<not configured>")" +
                 tocEntries.reduce("    tocEntries:\n") { (current, element: (key: String, value: String)) -> String in
                     return current + "        \(element.key): \(element.value)\n"
             }

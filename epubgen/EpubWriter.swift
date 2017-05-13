@@ -59,6 +59,7 @@ class EpubWriter {
             do {
                 try self.createEpubScaffolding()
                 try self.writeMetaData()
+                try self.writeContentFiles()
                 try self.copyFilesToInclude()
                 completion(nil)
             } catch let error {
@@ -98,6 +99,15 @@ class EpubWriter {
         let tocXhtmlUrl = packageFolderUrl.appendingPathComponent(epub.contentOpf.manifest.navItemHref)
         let tocXhtmlData = epub.tocXhtml.convertToXmlDocument().xmlData(withOptions: Int(XMLNode.Options.nodePrettyPrint.rawValue))
         try tocXhtmlData.write(to: tocXhtmlUrl, options: Data.WritingOptions.atomic)
+    }
+    
+    fileprivate func writeContentFiles() throws {
+        for xhtmlDocument in epub.xhtmlDocuments {
+            let xmlDocument = xhtmlDocument.convertToXmlDocument()
+            let xmlData = xmlDocument.xmlData(withOptions: Int(XMLNode.Options.nodePrettyPrint.rawValue))
+            let destinationUrl = self.packageFolderUrl.appendingPathComponent(xhtmlDocument.filename)
+            try xmlData.write(to: destinationUrl, options: Data.WritingOptions.atomic)
+        }
     }
     
     fileprivate func copyFilesToInclude() throws {
