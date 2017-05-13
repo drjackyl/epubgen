@@ -12,7 +12,7 @@ class epubgen {
         self.completion = completion
         self.sourceDirectory = configFileURL.deletingLastPathComponent()
         self.configFilename = configFileURL.lastPathComponent
-        configFileReader.readConfigFile(at: configFileURL) { (configString: String?, error: Error?) in
+        textFileReader.readTextFile(at: configFileURL) { (configString: String?, error: Error?) in
             guard let configString = configString else {
                 Output.printStdErr(message: "Failed reading config: \(error as Optional)")
                 Output.printStdErr(message: "Aborting.")
@@ -31,7 +31,7 @@ class epubgen {
     // MARK: - Private
     
     let dispatchQueue = DispatchQueueFactory.CreateDispatchQueue(component: "generator")
-    let configFileReader = ConfigFileReader()
+    let textFileReader = TextFileReader()
     let configFileParser = ConfigFileParser()
     let fileFinder = FileFinder()
     
@@ -78,11 +78,11 @@ class epubgen {
                 let tempDir = try TemporaryDirectory.create()
                 let writer = EpubWriter(epub: epub, destination: tempDir.url, filesToInclude: self.filesToInclude)
                 writer.write(completion: { (error) in
-                    print("Created package at \(tempDir.url.path)")
+                    Output.printStdOut(message: "Created package at \(tempDir.url.path)")
                     self.finish()
                 })
             } catch {
-                print("\(error)")
+                Output.printStdErr(message: "\(error)")
                 self.finish()
             }
         }
@@ -115,25 +115,49 @@ class epubgen {
                 continue
             }
             
-            let fileName = fileURL.lastPathComponent
+            var includeFile = true
+            
+            let fullFileName = fileURL.lastPathComponent
+            let fileName = fileURL.deletingPathExtension().lastPathComponent
             let fileExtension = fileURL.pathExtension
             let itemId = ContentOpf.createItemUUID()
             
             if fileExtension == FileExtensions.xhtml {
                 epub.contentOpf.spine.addItemref(idref: itemId)
                 
-                if let tocEntry = tocEntries[fileName] {
-                    epub.tocXhtml.addTocEntry(name: tocEntry, fileName: fileName)
+                if let tocEntry = tocEntries[fullFileName] {
+                    epub.tocXhtml.addTocEntry(name: tocEntry, fileName: fullFileName)
                 }
             }
             
-            if fileName == config.coverImageFilePath {
+            if fileExtension == FileExtensions.md {
+                includeFile = false
+                
+                var title = fileName
+                if let tocEntry = tocEntries[fullFileName] {
+                    title = tocEntry
+                }
+                
+                do {
+                    let markdown = try String(contentsOf: fileURL, encoding: String.Encoding.utf8)
+                    let html = Markdown.converter.convertMarkdownToHtml(markdown: markdown)
+                    let xhtmlDocument = XhtmlDocument(filename: "\(fileName).xhtml", title: title, styleHref: config.style, body: html)
+                    Output.printStdOut(message: "Converted \(fullFileName)")
+                    epub.add(xhtmlDocument: xhtmlDocument, tocTitle: title)
+                } catch let error {
+                    Output.printStdErr(message: "Failed to convert Markdown-file at\n    \(fileURL)\n\(error)")
+                    continue
+                }
+            }
+            
+            if fullFileName == config.coverImageFilePath {
                 epub.contentOpf.metadata.coverItemRef = itemId;
             }
             
-            epub.contentOpf.manifest.addItem(id: itemId, href: fileName, mediaType: FileTypes.getMimeType(forPathExtension: fileExtension))
-            
-            filesToInclude.append(EpubFileInclude(fileAt: fileURL, pathInPackage: fileName))
+            if includeFile {
+                epub.contentOpf.manifest.addItem(id: itemId, href: fullFileName, mediaType: FileTypes.getMimeType(forPathExtension: fileExtension))
+                filesToInclude.append(EpubFileInclude(fileAt: fileURL, pathInPackage: fullFileName))
+            }
         }
     }
     
