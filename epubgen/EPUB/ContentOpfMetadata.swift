@@ -13,6 +13,7 @@ class ContentOpfMetadata : XmlNodeConvertible {
     var dcRights = ""
     var dcTitle = ""
     var dcDate = ""
+    var coverItemRef = ""
     
     
     
@@ -33,7 +34,7 @@ class ContentOpfMetadata : XmlNodeConvertible {
             XMLElement(name: "dc:date", stringValue: dcDate),
             XMLElement(name: "meta",
                        attributes: [XMLNode.attribute(name: "name", value: "cover"),
-                                    XMLNode.attribute(name: "content", value: "cover")]),
+                                    XMLNode.attribute(name: "content", value: coverItemRef)]),
             XMLElement(name: "meta",
                        stringValue: dcDate,
                        attributes: [XMLNode.attribute(name: "property", value: "dcterms:modified")]),

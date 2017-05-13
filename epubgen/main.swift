@@ -11,9 +11,12 @@ let executableName = URL(fileURLWithPath: CommandLine.arguments[0]).lastPathComp
 Output.printStdOut(message: "\(executableName) \(Constants.version)")
 
 guard CommandLine.argc == 2 else {
-    Output.printStdOut(message: "usage:")
-    Output.printStdOut(message: "    \(executableName) config-file-name")
-    Output.printStdOut(message: "")
+    Help.printShortHelp(executableName: executableName)
+    exit(EXIT_SUCCESS)
+}
+
+if CommandLine.arguments[1] == "--help" {
+    Help.printHelp(executableName: executableName)
     exit(EXIT_SUCCESS)
 }
 

@@ -42,6 +42,9 @@ class Config: CustomStringConvertible, CustomDebugStringConvertible {
     /// The book's unique identifier. Used in content.opf for <dc:identifier>
     var identifier = ""
     
+    /// The path (within the package) to the cover-image-file
+    var coverImageFilePath = ""
+    
     /// A dictionary mapping content-filenames to toc-entries
     var tocEntries = [String: String]()
     
@@ -92,6 +95,10 @@ class Config: CustomStringConvertible, CustomDebugStringConvertible {
             self.identifier = identifier
         }
         
+        if let cover = configDictionary["cover"] {
+            self.coverImageFilePath = cover
+        }
+        
         configDictionary.keys.forEach { (key) in
             if key.hasSuffix(".xhtml") {
                 self.tocEntries.updateValue(configDictionary[key]!, forKey: key)
@@ -106,8 +113,6 @@ class Config: CustomStringConvertible, CustomDebugStringConvertible {
     // MARK: - CustomStringConvertible
     public var description: String {
         get {
-            
-            
             return "Config:\n" +
                 "    author: \"\(author)\"\n" +
                 "    title: \"\(title)\"\n" +
@@ -116,6 +121,7 @@ class Config: CustomStringConvertible, CustomDebugStringConvertible {
                 "    copyright: \"\(copyright)\"\n" +
                 "    date: \"\(date)\"\n" +
                 "    identifier: \"\(identifier)\"\n" +
+                "    cover: \"\(coverImageFilePath)\"\n" +
                 tocEntries.reduce("    tocEntries:\n") { (current, element: (key: String, value: String)) -> String in
                     return current + "        \(element.key): \(element.value)\n"
             }
@@ -133,6 +139,7 @@ class Config: CustomStringConvertible, CustomDebugStringConvertible {
                 "    copyright: \"\(copyright)\"\n" +
                 "    date: \"\(date)\"\n" +
                 "    identifier: \"\(identifier)\"\n" +
+                "    cover: \"\(coverImageFilePath)\"\n" +
                 tocEntries.reduce("    tocEntries:\n") { (current, element: (key: String, value: String)) -> String in
                     return current + "        \(element.key): \(element.value)\n"
             }

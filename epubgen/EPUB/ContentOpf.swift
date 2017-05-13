@@ -49,7 +49,7 @@ class ContentOpf : XmlDocumentConvertible {
 
 extension ContentOpf {
     
-    class func ItemUUID() -> String {
+    class func createItemUUID() -> String {
         return "id-" + UUID().uuidString
     }
     

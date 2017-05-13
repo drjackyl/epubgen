@@ -13,6 +13,9 @@ class ContentOpfManifest : XmlNodeConvertible {
     
     // MARK: - Public
     
+    /// The href-value of the nav-item
+    fileprivate(set) var navItemHref: String = ""
+    
     /**
      Adds an item-element
      
@@ -54,6 +57,7 @@ class ContentOpfManifest : XmlNodeConvertible {
                                                   XMLNode.attribute(name: "media-type", value: mediaType),
                                                   XMLNode.attribute(name: "properties", value: "nav")])
         items.append(itemElement)
+        navItemHref = href
     }
     
     

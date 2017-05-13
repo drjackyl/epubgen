@@ -12,11 +12,8 @@ class ConfigFileReader {
      Reads an epubgen config-file at the given URL
      
      - Parameter fileURL: file-URL to the config-file.
-     
      - Parameter completion: The completion-handler providing the config-file-string and an error.
-     
      - Parameter configFileString: Contains the config-file as a String. Is an empty string, if an error occurred.
-     
      - Parameter error: Has a value if a an error occurred.
      */
     func readConfigFile(at fileURL: URL, completion: @escaping (_ configFileString: String, _ error: Error?) -> Void) {

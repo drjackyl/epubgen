@@ -14,7 +14,7 @@ class epubgen {
         self.configFilename = configFileURL.lastPathComponent
         configFileReader.readConfigFile(at: configFileURL) { (configString: String?, error: Error?) in
             guard let configString = configString else {
-                Output.printStdErr(message: "Failed reading config: \(error)")
+                Output.printStdErr(message: "Failed reading config: \(error as Optional)")
                 Output.printStdErr(message: "Aborting.")
                 return
             }
@@ -39,46 +39,52 @@ class epubgen {
     var configFilename = "epubgen.cfg"
     var config = Config()
     var filesToProcess = [URL]()
+    var filesToInclude = [EpubFileInclude]()
     var completion: ((Void) -> Void)?
     
     fileprivate func parseConfig(configString: String) {
         configFileParser.parse(configFile: configString) { (config: Config) in
             Output.printStdOut(message: "Config parsed")
-            Output.printStdOut(message: "\(config)")
             self.config = config
             self.findFiles(at: self.sourceDirectory)
         }
     }
     
     fileprivate func findFiles(at fileURL: URL) {
-        fileFinder.listFiles(at: fileURL, completion: { (fileURLs, error) in
+        fileFinder.listFilesIncludingSubdirectories(at: fileURL, completion: { (fileURLs, error) in
             if error != nil {
                 self.finish()
                 return
             }
             
+            Output.printStdOut(message: "Found \(fileURLs.count) files")
             self.filesToProcess = fileURLs
             self.generateEpub()
         })
     }
     
     fileprivate func generateEpub() {
+        Output.printStdOut(message: "Generating package")
         dispatchQueue.async {
             let epub = Epub()
             
             self.processMetadata(config: self.config, epub: epub)
             self.processFiles(files: self.filesToProcess, tocEntries: self.config.tocEntries, epub: epub)
             
-            let tocXhtmlId = ContentOpf.ItemUUID()
+            let tocXhtmlId = ContentOpf.createItemUUID()
             epub.contentOpf.manifest.addNavItem(id: tocXhtmlId, href: "toc.xhtml", mediaType: MimeTypes.xhtml)
             
-            let contentOpfXml = epub.contentOpf.convertToXmlDocument().xmlString(withOptions: Int(XMLNode.Options.nodePrettyPrint.rawValue))
-            Output.printStdOut(message: contentOpfXml)
-            
-            let tocXhtml = epub.tocXhtml.convertToXmlDocument().xmlString(withOptions: Int(XMLNode.Options.nodePrettyPrint.rawValue))
-            Output.printStdOut(message: tocXhtml)
-            
-            self.finish()
+            do {
+                let tempDir = try TemporaryDirectory.create()
+                let writer = EpubWriter(epub: epub, destination: tempDir.url, filesToInclude: self.filesToInclude)
+                writer.write(completion: { (error) in
+                    print("Created package at \(tempDir.url.path)")
+                    self.finish()
+                })
+            } catch {
+                print("\(error)")
+                self.finish()
+            }
         }
     }
     
@@ -93,6 +99,12 @@ class epubgen {
         epub.tocXhtml.title = config.title
     }
     
+    /**
+     Processes the files found by FileFinder and adds them to the package
+     
+     - ToDo: Support for files in subfolders of the package. Currently the file-name (lastPathComponent) is used as the
+         item's href-value. If a file is located in a subfolder, the href will be broken.
+     */
     fileprivate func processFiles(files: [URL], tocEntries: [String: String], epub: Epub) {
         let sortedFiles = files.sorted(by: { (url1, url2) -> Bool in
             return url1.lastPathComponent.localizedStandardCompare(url2.lastPathComponent) == ComparisonResult.orderedAscending
@@ -105,7 +117,7 @@ class epubgen {
             
             let fileName = fileURL.lastPathComponent
             let fileExtension = fileURL.pathExtension
-            let itemId = ContentOpf.ItemUUID()
+            let itemId = ContentOpf.createItemUUID()
             
             if fileExtension == FileExtensions.xhtml {
                 epub.contentOpf.spine.addItemref(idref: itemId)
@@ -115,7 +127,13 @@ class epubgen {
                 }
             }
             
+            if fileName == config.coverImageFilePath {
+                epub.contentOpf.metadata.coverItemRef = itemId;
+            }
+            
             epub.contentOpf.manifest.addItem(id: itemId, href: fileName, mediaType: FileTypes.getMimeType(forPathExtension: fileExtension))
+            
+            filesToInclude.append(EpubFileInclude(fileAt: fileURL, pathInPackage: fileName))
         }
     }
     
