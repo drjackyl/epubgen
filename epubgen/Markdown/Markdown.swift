@@ -9,7 +9,7 @@ import Foundation
  */
 class Markdown {
     
-    static let converter: MarkdownConverter = PlainMarkdown()
+    static let converter: MarkdownConverter = DownMarkdown()
     
 }
 

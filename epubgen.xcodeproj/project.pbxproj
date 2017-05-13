@@ -68,6 +68,40 @@
 		DCC707A01EC10CE600C9D43E /* MarkdownConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7079E1EC10CE600C9D43E /* MarkdownConverter.swift */; };
 		DCC707A21EC10E8600C9D43E /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC707A11EC10E8600C9D43E /* Markdown.swift */; };
 		DCC707A31EC10E8600C9D43E /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC707A11EC10E8600C9D43E /* Markdown.swift */; };
+		DCD2DA231EC4EEC300191A7D /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9E71EC4EEC300191A7D /* blocks.c */; };
+		DCD2DA241EC4EEC300191A7D /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9E81EC4EEC300191A7D /* buffer.c */; };
+		DCD2DA261EC4EEC300191A7D /* cmark.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9EC1EC4EEC300191A7D /* cmark.c */; };
+		DCD2DA271EC4EEC300191A7D /* cmark_ctype.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9EE1EC4EEC300191A7D /* cmark_ctype.c */; };
+		DCD2DA281EC4EEC300191A7D /* commonmark.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9F21EC4EEC300191A7D /* commonmark.c */; };
+		DCD2DA2A1EC4EEC300191A7D /* houdini_href_e.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9F81EC4EEC300191A7D /* houdini_href_e.c */; };
+		DCD2DA2B1EC4EEC300191A7D /* houdini_html_e.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9F91EC4EEC300191A7D /* houdini_html_e.c */; };
+		DCD2DA2C1EC4EEC300191A7D /* houdini_html_u.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9FA1EC4EEC300191A7D /* houdini_html_u.c */; };
+		DCD2DA2D1EC4EEC300191A7D /* html.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9FB1EC4EEC300191A7D /* html.c */; };
+		DCD2DA2E1EC4EEC300191A7D /* inlines.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9FD1EC4EEC300191A7D /* inlines.c */; };
+		DCD2DA2F1EC4EEC300191A7D /* iterator.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D9FF1EC4EEC300191A7D /* iterator.c */; };
+		DCD2DA301EC4EEC300191A7D /* latex.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA011EC4EEC300191A7D /* latex.c */; };
+		DCD2DA311EC4EEC300191A7D /* man.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA021EC4EEC300191A7D /* man.c */; };
+		DCD2DA321EC4EEC300191A7D /* node.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA041EC4EEC300191A7D /* node.c */; };
+		DCD2DA331EC4EEC300191A7D /* references.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA071EC4EEC300191A7D /* references.c */; };
+		DCD2DA341EC4EEC300191A7D /* render.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA091EC4EEC300191A7D /* render.c */; };
+		DCD2DA351EC4EEC300191A7D /* scanners.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA0B1EC4EEC300191A7D /* scanners.c */; };
+		DCD2DA361EC4EEC300191A7D /* utf8.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA0D1EC4EEC300191A7D /* utf8.c */; };
+		DCD2DA371EC4EEC300191A7D /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA0F1EC4EEC300191A7D /* xml.c */; };
+		DCD2DA381EC4EEC300191A7D /* Down.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA111EC4EEC300191A7D /* Down.swift */; };
+		DCD2DA391EC4EEC300191A7D /* DownErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA131EC4EEC300191A7D /* DownErrors.swift */; };
+		DCD2DA3A1EC4EEC300191A7D /* DownOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA141EC4EEC300191A7D /* DownOptions.swift */; };
+		DCD2DA3B1EC4EEC300191A7D /* NSAttributedString+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA161EC4EEC300191A7D /* NSAttributedString+HTML.swift */; };
+		DCD2DA3C1EC4EEC300191A7D /* String+ToHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA171EC4EEC300191A7D /* String+ToHTML.swift */; };
+		DCD2DA3D1EC4EEC300191A7D /* DownASTRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA191EC4EEC300191A7D /* DownASTRenderable.swift */; };
+		DCD2DA3E1EC4EEC300191A7D /* DownAttributedStringRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA1A1EC4EEC300191A7D /* DownAttributedStringRenderable.swift */; };
+		DCD2DA3F1EC4EEC300191A7D /* DownCommonMarkRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA1B1EC4EEC300191A7D /* DownCommonMarkRenderable.swift */; };
+		DCD2DA401EC4EEC300191A7D /* DownGroffRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA1C1EC4EEC300191A7D /* DownGroffRenderable.swift */; };
+		DCD2DA411EC4EEC300191A7D /* DownHTMLRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA1D1EC4EEC300191A7D /* DownHTMLRenderable.swift */; };
+		DCD2DA421EC4EEC300191A7D /* DownLaTeXRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA1E1EC4EEC300191A7D /* DownLaTeXRenderable.swift */; };
+		DCD2DA431EC4EEC300191A7D /* DownRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA1F1EC4EEC300191A7D /* DownRenderable.swift */; };
+		DCD2DA441EC4EEC300191A7D /* DownXMLRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA201EC4EEC300191A7D /* DownXMLRenderable.swift */; };
+		DCD2DA451EC4EEC300191A7D /* DownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA221EC4EEC300191A7D /* DownView.swift */; };
+		DCD2DA471EC4F0B400191A7D /* DownMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2DA461EC4F0B400191A7D /* DownMarkdown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +153,63 @@
 		DCC7079B1EC10C9B00C9D43E /* PlainMarkdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlainMarkdown.swift; sourceTree = "<group>"; };
 		DCC7079E1EC10CE600C9D43E /* MarkdownConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownConverter.swift; sourceTree = "<group>"; };
 		DCC707A11EC10E8600C9D43E /* Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
+		DCD2D9E71EC4EEC300191A7D /* blocks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blocks.c; sourceTree = "<group>"; };
+		DCD2D9E81EC4EEC300191A7D /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
+		DCD2D9E91EC4EEC300191A7D /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		DCD2D9EA1EC4EEC300191A7D /* case_fold_switch.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = case_fold_switch.inc; sourceTree = "<group>"; };
+		DCD2D9EB1EC4EEC300191A7D /* chunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chunk.h; sourceTree = "<group>"; };
+		DCD2D9EC1EC4EEC300191A7D /* cmark.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmark.c; sourceTree = "<group>"; };
+		DCD2D9ED1EC4EEC300191A7D /* cmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmark.h; sourceTree = "<group>"; };
+		DCD2D9EE1EC4EEC300191A7D /* cmark_ctype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmark_ctype.c; sourceTree = "<group>"; };
+		DCD2D9EF1EC4EEC300191A7D /* cmark_ctype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmark_ctype.h; sourceTree = "<group>"; };
+		DCD2D9F01EC4EEC300191A7D /* cmark_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmark_export.h; sourceTree = "<group>"; };
+		DCD2D9F11EC4EEC300191A7D /* cmark_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmark_version.h; sourceTree = "<group>"; };
+		DCD2D9F21EC4EEC300191A7D /* commonmark.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = commonmark.c; sourceTree = "<group>"; };
+		DCD2D9F31EC4EEC300191A7D /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		DCD2D9F41EC4EEC300191A7D /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		DCD2D9F51EC4EEC300191A7D /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		DCD2D9F61EC4EEC300191A7D /* entities.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = entities.inc; sourceTree = "<group>"; };
+		DCD2D9F71EC4EEC300191A7D /* houdini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = houdini.h; sourceTree = "<group>"; };
+		DCD2D9F81EC4EEC300191A7D /* houdini_href_e.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = houdini_href_e.c; sourceTree = "<group>"; };
+		DCD2D9F91EC4EEC300191A7D /* houdini_html_e.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = houdini_html_e.c; sourceTree = "<group>"; };
+		DCD2D9FA1EC4EEC300191A7D /* houdini_html_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = houdini_html_u.c; sourceTree = "<group>"; };
+		DCD2D9FB1EC4EEC300191A7D /* html.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = html.c; sourceTree = "<group>"; };
+		DCD2D9FC1EC4EEC300191A7D /* html_unescape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = html_unescape.h; sourceTree = "<group>"; };
+		DCD2D9FD1EC4EEC300191A7D /* inlines.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inlines.c; sourceTree = "<group>"; };
+		DCD2D9FE1EC4EEC300191A7D /* inlines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inlines.h; sourceTree = "<group>"; };
+		DCD2D9FF1EC4EEC300191A7D /* iterator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iterator.c; sourceTree = "<group>"; };
+		DCD2DA001EC4EEC300191A7D /* iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iterator.h; sourceTree = "<group>"; };
+		DCD2DA011EC4EEC300191A7D /* latex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = latex.c; sourceTree = "<group>"; };
+		DCD2DA021EC4EEC300191A7D /* man.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = man.c; sourceTree = "<group>"; };
+		DCD2DA031EC4EEC300191A7D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		DCD2DA041EC4EEC300191A7D /* node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = node.c; sourceTree = "<group>"; };
+		DCD2DA051EC4EEC300191A7D /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
+		DCD2DA061EC4EEC300191A7D /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
+		DCD2DA071EC4EEC300191A7D /* references.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = references.c; sourceTree = "<group>"; };
+		DCD2DA081EC4EEC300191A7D /* references.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = references.h; sourceTree = "<group>"; };
+		DCD2DA091EC4EEC300191A7D /* render.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = render.c; sourceTree = "<group>"; };
+		DCD2DA0A1EC4EEC300191A7D /* render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = render.h; sourceTree = "<group>"; };
+		DCD2DA0B1EC4EEC300191A7D /* scanners.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scanners.c; sourceTree = "<group>"; };
+		DCD2DA0C1EC4EEC300191A7D /* scanners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scanners.h; sourceTree = "<group>"; };
+		DCD2DA0D1EC4EEC300191A7D /* utf8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utf8.c; sourceTree = "<group>"; };
+		DCD2DA0E1EC4EEC300191A7D /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
+		DCD2DA0F1EC4EEC300191A7D /* xml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xml.c; sourceTree = "<group>"; };
+		DCD2DA101EC4EEC300191A7D /* Down.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Down.h; sourceTree = "<group>"; };
+		DCD2DA111EC4EEC300191A7D /* Down.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Down.swift; sourceTree = "<group>"; };
+		DCD2DA131EC4EEC300191A7D /* DownErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownErrors.swift; sourceTree = "<group>"; };
+		DCD2DA141EC4EEC300191A7D /* DownOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownOptions.swift; sourceTree = "<group>"; };
+		DCD2DA161EC4EEC300191A7D /* NSAttributedString+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+HTML.swift"; sourceTree = "<group>"; };
+		DCD2DA171EC4EEC300191A7D /* String+ToHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ToHTML.swift"; sourceTree = "<group>"; };
+		DCD2DA191EC4EEC300191A7D /* DownASTRenderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownASTRenderable.swift; sourceTree = "<group>"; };
+		DCD2DA1A1EC4EEC300191A7D /* DownAttributedStringRenderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownAttributedStringRenderable.swift; sourceTree = "<group>"; };
+		DCD2DA1B1EC4EEC300191A7D /* DownCommonMarkRenderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownCommonMarkRenderable.swift; sourceTree = "<group>"; };
+		DCD2DA1C1EC4EEC300191A7D /* DownGroffRenderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownGroffRenderable.swift; sourceTree = "<group>"; };
+		DCD2DA1D1EC4EEC300191A7D /* DownHTMLRenderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownHTMLRenderable.swift; sourceTree = "<group>"; };
+		DCD2DA1E1EC4EEC300191A7D /* DownLaTeXRenderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownLaTeXRenderable.swift; sourceTree = "<group>"; };
+		DCD2DA1F1EC4EEC300191A7D /* DownRenderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownRenderable.swift; sourceTree = "<group>"; };
+		DCD2DA201EC4EEC300191A7D /* DownXMLRenderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownXMLRenderable.swift; sourceTree = "<group>"; };
+		DCD2DA221EC4EEC300191A7D /* DownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownView.swift; sourceTree = "<group>"; };
+		DCD2DA461EC4F0B400191A7D /* DownMarkdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownMarkdown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +233,7 @@
 		DC1D61AB1E72AA080048EE84 = {
 			isa = PBXGroup;
 			children = (
+				DCD2D9E41EC4EEC300191A7D /* Libraries */,
 				DC4093F71EC3A9830020EC34 /* Resources */,
 				DC1D61B61E72AA080048EE84 /* epubgen */,
 				DC2A39621E749EBE00643120 /* epubgen-tests */,
@@ -246,11 +338,123 @@
 		DCC7079A1EC10C9B00C9D43E /* Markdown */ = {
 			isa = PBXGroup;
 			children = (
+				DCD2DA461EC4F0B400191A7D /* DownMarkdown.swift */,
 				DCC7079B1EC10C9B00C9D43E /* PlainMarkdown.swift */,
 				DCC7079E1EC10CE600C9D43E /* MarkdownConverter.swift */,
 				DCC707A11EC10E8600C9D43E /* Markdown.swift */,
 			);
 			path = Markdown;
+			sourceTree = "<group>";
+		};
+		DCD2D9E41EC4EEC300191A7D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2D9E51EC4EEC300191A7D /* Down */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		DCD2D9E51EC4EEC300191A7D /* Down */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2D9E61EC4EEC300191A7D /* cmark */,
+				DCD2DA101EC4EEC300191A7D /* Down.h */,
+				DCD2DA111EC4EEC300191A7D /* Down.swift */,
+				DCD2DA121EC4EEC300191A7D /* Enums & Options */,
+				DCD2DA151EC4EEC300191A7D /* Extensions */,
+				DCD2DA181EC4EEC300191A7D /* Renderers */,
+				DCD2DA211EC4EEC300191A7D /* Views */,
+			);
+			path = Down;
+			sourceTree = "<group>";
+		};
+		DCD2D9E61EC4EEC300191A7D /* cmark */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2D9E71EC4EEC300191A7D /* blocks.c */,
+				DCD2D9E81EC4EEC300191A7D /* buffer.c */,
+				DCD2D9E91EC4EEC300191A7D /* buffer.h */,
+				DCD2D9EA1EC4EEC300191A7D /* case_fold_switch.inc */,
+				DCD2D9EB1EC4EEC300191A7D /* chunk.h */,
+				DCD2D9EC1EC4EEC300191A7D /* cmark.c */,
+				DCD2D9ED1EC4EEC300191A7D /* cmark.h */,
+				DCD2D9EE1EC4EEC300191A7D /* cmark_ctype.c */,
+				DCD2D9EF1EC4EEC300191A7D /* cmark_ctype.h */,
+				DCD2D9F01EC4EEC300191A7D /* cmark_export.h */,
+				DCD2D9F11EC4EEC300191A7D /* cmark_version.h */,
+				DCD2D9F21EC4EEC300191A7D /* commonmark.c */,
+				DCD2D9F31EC4EEC300191A7D /* config.h */,
+				DCD2D9F41EC4EEC300191A7D /* COPYING */,
+				DCD2D9F51EC4EEC300191A7D /* debug.h */,
+				DCD2D9F61EC4EEC300191A7D /* entities.inc */,
+				DCD2D9F71EC4EEC300191A7D /* houdini.h */,
+				DCD2D9F81EC4EEC300191A7D /* houdini_href_e.c */,
+				DCD2D9F91EC4EEC300191A7D /* houdini_html_e.c */,
+				DCD2D9FA1EC4EEC300191A7D /* houdini_html_u.c */,
+				DCD2D9FB1EC4EEC300191A7D /* html.c */,
+				DCD2D9FC1EC4EEC300191A7D /* html_unescape.h */,
+				DCD2D9FD1EC4EEC300191A7D /* inlines.c */,
+				DCD2D9FE1EC4EEC300191A7D /* inlines.h */,
+				DCD2D9FF1EC4EEC300191A7D /* iterator.c */,
+				DCD2DA001EC4EEC300191A7D /* iterator.h */,
+				DCD2DA011EC4EEC300191A7D /* latex.c */,
+				DCD2DA021EC4EEC300191A7D /* man.c */,
+				DCD2DA031EC4EEC300191A7D /* module.modulemap */,
+				DCD2DA041EC4EEC300191A7D /* node.c */,
+				DCD2DA051EC4EEC300191A7D /* node.h */,
+				DCD2DA061EC4EEC300191A7D /* parser.h */,
+				DCD2DA071EC4EEC300191A7D /* references.c */,
+				DCD2DA081EC4EEC300191A7D /* references.h */,
+				DCD2DA091EC4EEC300191A7D /* render.c */,
+				DCD2DA0A1EC4EEC300191A7D /* render.h */,
+				DCD2DA0B1EC4EEC300191A7D /* scanners.c */,
+				DCD2DA0C1EC4EEC300191A7D /* scanners.h */,
+				DCD2DA0D1EC4EEC300191A7D /* utf8.c */,
+				DCD2DA0E1EC4EEC300191A7D /* utf8.h */,
+				DCD2DA0F1EC4EEC300191A7D /* xml.c */,
+			);
+			path = cmark;
+			sourceTree = "<group>";
+		};
+		DCD2DA121EC4EEC300191A7D /* Enums & Options */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2DA131EC4EEC300191A7D /* DownErrors.swift */,
+				DCD2DA141EC4EEC300191A7D /* DownOptions.swift */,
+			);
+			path = "Enums & Options";
+			sourceTree = "<group>";
+		};
+		DCD2DA151EC4EEC300191A7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2DA161EC4EEC300191A7D /* NSAttributedString+HTML.swift */,
+				DCD2DA171EC4EEC300191A7D /* String+ToHTML.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DCD2DA181EC4EEC300191A7D /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2DA191EC4EEC300191A7D /* DownASTRenderable.swift */,
+				DCD2DA1A1EC4EEC300191A7D /* DownAttributedStringRenderable.swift */,
+				DCD2DA1B1EC4EEC300191A7D /* DownCommonMarkRenderable.swift */,
+				DCD2DA1C1EC4EEC300191A7D /* DownGroffRenderable.swift */,
+				DCD2DA1D1EC4EEC300191A7D /* DownHTMLRenderable.swift */,
+				DCD2DA1E1EC4EEC300191A7D /* DownLaTeXRenderable.swift */,
+				DCD2DA1F1EC4EEC300191A7D /* DownRenderable.swift */,
+				DCD2DA201EC4EEC300191A7D /* DownXMLRenderable.swift */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		DCD2DA211EC4EEC300191A7D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCD2DA221EC4EEC300191A7D /* DownView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,35 +549,69 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD2DA301EC4EEC300191A7D /* latex.c in Sources */,
 				DC1D61FF1E731D630048EE84 /* XmlConvertible.swift in Sources */,
+				DCD2DA2F1EC4EEC300191A7D /* iterator.c in Sources */,
 				DC2A39A01E7688AA00643120 /* Constants.swift in Sources */,
 				DCC7079C1EC10C9B00C9D43E /* PlainMarkdown.swift in Sources */,
+				DCD2DA321EC4EEC300191A7D /* node.c in Sources */,
 				DC2A39A21E768C6900643120 /* FileTypes.swift in Sources */,
+				DCD2DA341EC4EEC300191A7D /* render.c in Sources */,
+				DCD2DA3A1EC4EEC300191A7D /* DownOptions.swift in Sources */,
 				DCC7079F1EC10CE600C9D43E /* MarkdownConverter.swift in Sources */,
 				DC8353161EA36E28005F54CB /* Help.swift in Sources */,
 				DC1D62011E7321E90048EE84 /* ContentOpfMetadata.swift in Sources */,
+				DCD2DA411EC4EEC300191A7D /* DownHTMLRenderable.swift in Sources */,
 				DC1D61FD1E731CD20048EE84 /* ContentOpf.swift in Sources */,
 				DCC707A21EC10E8600C9D43E /* Markdown.swift in Sources */,
 				DC1D62061E7360A90048EE84 /* ContentOpfManifest.swift in Sources */,
+				DCD2DA2C1EC4EEC300191A7D /* houdini_html_u.c in Sources */,
+				DCD2DA401EC4EEC300191A7D /* DownGroffRenderable.swift in Sources */,
 				DC1D620A1E7367F10048EE84 /* TocXhtml.swift in Sources */,
+				DCD2DA3F1EC4EEC300191A7D /* DownCommonMarkRenderable.swift in Sources */,
+				DCD2DA241EC4EEC300191A7D /* buffer.c in Sources */,
 				DCC707961EC1064000C9D43E /* XhtmlDocument.swift in Sources */,
+				DCD2DA3B1EC4EEC300191A7D /* NSAttributedString+HTML.swift in Sources */,
 				DC2A395C1E7494DE00643120 /* FileFinder.swift in Sources */,
 				DC1D62041E734B140048EE84 /* Xml.swift in Sources */,
 				DC1D62161E7371570048EE84 /* Output.swift in Sources */,
 				DC1D62151E7371570048EE84 /* DispatchQueueFactory.swift in Sources */,
+				DCD2DA451EC4EEC300191A7D /* DownView.swift in Sources */,
+				DCD2DA2A1EC4EEC300191A7D /* houdini_href_e.c in Sources */,
+				DCD2DA311EC4EEC300191A7D /* man.c in Sources */,
+				DCD2DA2D1EC4EEC300191A7D /* html.c in Sources */,
 				DC4094001EC3B7DF0020EC34 /* ConfigFileParser.swift in Sources */,
 				DC1D620E1E73707F0048EE84 /* String.swift in Sources */,
+				DCD2DA431EC4EEC300191A7D /* DownRenderable.swift in Sources */,
+				DCD2DA3D1EC4EEC300191A7D /* DownASTRenderable.swift in Sources */,
 				DC4093FE1EC3B7DF0020EC34 /* Config.swift in Sources */,
+				DCD2DA3C1EC4EEC300191A7D /* String+ToHTML.swift in Sources */,
+				DCD2DA421EC4EEC300191A7D /* DownLaTeXRenderable.swift in Sources */,
+				DCD2DA331EC4EEC300191A7D /* references.c in Sources */,
 				DC8352FF1E9EA273005F54CB /* EpubWriter.swift in Sources */,
+				DCD2DA391EC4EEC300191A7D /* DownErrors.swift in Sources */,
+				DCD2DA281EC4EEC300191A7D /* commonmark.c in Sources */,
+				DCD2DA2B1EC4EEC300191A7D /* houdini_html_e.c in Sources */,
 				DC1D62171E7371570048EE84 /* RegEx.swift in Sources */,
+				DCD2DA371EC4EEC300191A7D /* xml.c in Sources */,
 				DC8E11B61E7A844300BC5D25 /* TemporaryDirectory.swift in Sources */,
+				DCD2DA261EC4EEC300191A7D /* cmark.c in Sources */,
 				DC1D62081E73665B0048EE84 /* ContentOpfSpine.swift in Sources */,
 				DC1D61BF1E72AA350048EE84 /* epubgen.swift in Sources */,
 				DC8353021E9EA694005F54CB /* ContainerXml.swift in Sources */,
+				DCD2DA471EC4F0B400191A7D /* DownMarkdown.swift in Sources */,
+				DCD2DA3E1EC4EEC300191A7D /* DownAttributedStringRenderable.swift in Sources */,
+				DCD2DA351EC4EEC300191A7D /* scanners.c in Sources */,
+				DCD2DA271EC4EEC300191A7D /* cmark_ctype.c in Sources */,
 				DC1D61B81E72AA080048EE84 /* main.swift in Sources */,
 				DC1D620C1E736CF10048EE84 /* Epub.swift in Sources */,
+				DCD2DA441EC4EEC300191A7D /* DownXMLRenderable.swift in Sources */,
+				DCD2DA231EC4EEC300191A7D /* blocks.c in Sources */,
 				DC4093F91EC3B7C40020EC34 /* TextFileReader.swift in Sources */,
 				DC8353111EA2414D005F54CB /* URL.swift in Sources */,
+				DCD2DA381EC4EEC300191A7D /* Down.swift in Sources */,
+				DCD2DA361EC4EEC300191A7D /* utf8.c in Sources */,
+				DCD2DA2E1EC4EEC300191A7D /* inlines.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +750,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = 5ZJJU69C7F;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Libraries/Down/cmark";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -521,6 +760,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = 5ZJJU69C7F;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Libraries/Down/cmark";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

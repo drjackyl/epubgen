@@ -133,17 +133,13 @@ class epubgen {
             if fileExtension == FileExtensions.md {
                 includeFile = false
                 
-                var title = fileName
-                if let tocEntry = tocEntries[fullFileName] {
-                    title = tocEntry
-                }
-                
                 do {
                     let markdown = try String(contentsOf: fileURL, encoding: String.Encoding.utf8)
                     let html = Markdown.converter.convertMarkdownToHtml(markdown: markdown)
-                    let xhtmlDocument = XhtmlDocument(filename: "\(fileName).xhtml", title: title, styleHref: config.style, body: html)
+                    let xhtmlTitle = tocEntries[fullFileName] ?? fileName
+                    let xhtmlDocument = XhtmlDocument(filename: "\(fileName).xhtml", title: xhtmlTitle, styleHref: config.style, body: html)
                     Output.printStdOut(message: "Converted \(fullFileName)")
-                    epub.add(xhtmlDocument: xhtmlDocument, tocTitle: title)
+                    epub.add(xhtmlDocument: xhtmlDocument, tocTitle: tocEntries[fullFileName])
                 } catch let error {
                     Output.printStdErr(message: "Failed to convert Markdown-file at\n    \(fileURL)\n\(error)")
                     continue
