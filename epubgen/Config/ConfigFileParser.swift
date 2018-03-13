@@ -34,12 +34,12 @@ class ConfigFileParser {
     fileprivate func parse(configString: String) -> [String: String] {
         var configDictionary = [String: String]()
         configString.enumerateLines { (line: String, stop: inout Bool) in
-            guard let match = RegEx.configKeyValueRegex.firstMatch(in: line, options: [], range: NSRange(location: 0, length: line.characters.count)) else {
+            guard let match = RegEx.configKeyValueRegex.firstMatch(in: line, options: [], range: NSRange(location: 0, length: line.count)) else {
                 return
             }
             
-            let key = line.substring(with: match.rangeAt(1))
-            let value = line.substring(with: match.rangeAt(2))
+            let key = line.substring(with: match.range(at: 1))
+            let value = line.substring(with: match.range(at: 2))
             configDictionary[key] = value
         }
         return configDictionary

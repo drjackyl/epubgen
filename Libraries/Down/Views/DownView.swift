@@ -6,6 +6,9 @@
 //  Copyright © 2016 Glazed Donut, LLC. All rights reserved.
 //
 
+#if os(tvOS) || os(watchOS)
+    // Sorry, not available for tvOS nor watchOS
+#else
 import WebKit
 
 // MARK: - Public API
@@ -107,7 +110,7 @@ extension DownView: WKNavigationDelegate {
             #if os(iOS)
                 UIApplication.shared.openURL(url)
             #elseif os(OSX)
-                NSWorkspace.shared().open(url)
+                NSWorkspace.shared.open(url)
             #endif
         default:
             decisionHandler(.allow)
@@ -119,3 +122,4 @@ extension DownView: WKNavigationDelegate {
     }
     
 }
+#endif
