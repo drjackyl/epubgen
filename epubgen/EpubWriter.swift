@@ -82,7 +82,7 @@ class EpubWriter {
         try fileIO.createDirectory(at: metaInfUrl, withIntermediateDirectories: false, attributes: [:])
         
         let containerXmlUrl = metaInfUrl.appendingPathComponent("container.xml")
-        let containerXmlData = epub.containerXml.convertToXmlDocument().xmlData(withOptions: Int(XMLNode.Options.nodePrettyPrint.rawValue))
+        let containerXmlData = epub.containerXml.convertToXmlDocument().xmlData(options: XMLNode.Options(rawValue: XMLNode.Options.RawValue(Int(XMLNode.Options.nodePrettyPrint.rawValue))))
         try containerXmlData.write(to: containerXmlUrl, options: Data.WritingOptions.atomic)
         
         try fileIO.createDirectory(at: packageFolderUrl, withIntermediateDirectories: false, attributes: [:])
@@ -93,18 +93,18 @@ class EpubWriter {
     
     fileprivate func writeMetaData() throws {
         let contentOpfUrl = destination.appendingPathComponent(epub.containerXml.packageFilePath)
-        let contentOpfData = epub.contentOpf.convertToXmlDocument().xmlData(withOptions: Int(XMLNode.Options.nodePrettyPrint.rawValue))
+        let contentOpfData = epub.contentOpf.convertToXmlDocument().xmlData(options: XMLNode.Options(rawValue: XMLNode.Options.RawValue(Int(XMLNode.Options.nodePrettyPrint.rawValue))))
         try contentOpfData.write(to: contentOpfUrl, options: Data.WritingOptions.atomic)
         
         let tocXhtmlUrl = packageFolderUrl.appendingPathComponent(epub.contentOpf.manifest.navItemHref)
-        let tocXhtmlData = epub.tocXhtml.convertToXmlDocument().xmlData(withOptions: Int(XMLNode.Options.nodePrettyPrint.rawValue))
+        let tocXhtmlData = epub.tocXhtml.convertToXmlDocument().xmlData(options: XMLNode.Options(rawValue: XMLNode.Options.RawValue(Int(XMLNode.Options.nodePrettyPrint.rawValue))))
         try tocXhtmlData.write(to: tocXhtmlUrl, options: Data.WritingOptions.atomic)
     }
     
     fileprivate func writeContentFiles() throws {
         for xhtmlDocument in epub.xhtmlDocuments {
             let xmlDocument = xhtmlDocument.convertToXmlDocument()
-            let xmlData = xmlDocument.xmlData(withOptions: Int(XMLNode.Options.nodePrettyPrint.rawValue))
+            let xmlData = xmlDocument.xmlData(options: XMLNode.Options(rawValue: XMLNode.Options.RawValue(Int(XMLNode.Options.nodePrettyPrint.rawValue))))
             let destinationUrl = self.packageFolderUrl.appendingPathComponent(xhtmlDocument.filename)
             try xmlData.write(to: destinationUrl, options: Data.WritingOptions.atomic)
         }

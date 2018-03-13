@@ -8,7 +8,7 @@ class epubgen {
     
     // MARK: - Public
     
-    func generateEpub(withConfig configFileURL: URL, completion: @escaping (Void) -> Void) {
+    func generateEpub(withConfig configFileURL: URL, completion: @escaping () -> Void) {
         self.completion = completion
         self.sourceDirectory = configFileURL.deletingLastPathComponent()
         self.configFilename = configFileURL.lastPathComponent
@@ -41,7 +41,7 @@ class epubgen {
     var filesToProcess = [URL]()
     var filesToInclude = [EpubFileInclude]()
     var workingDirectory: TemporaryDirectory? = nil
-    var completion: ((Void) -> Void)?
+    var completion: (() -> Void)?
     
     fileprivate func parseConfig(configString: String) {
         configFileParser.parse(configFile: configString) { (config: Config) in
