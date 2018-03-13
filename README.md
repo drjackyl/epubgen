@@ -1,6 +1,6 @@
 # epubgen
 
-A Swift 3-based command-line generator for EPUBs.
+A Swift 4-based command-line generator for EPUBs.
 
 ## About
 
@@ -19,7 +19,7 @@ Currently, binaries are not available. To use the tool, you need to build it you
 **Requirements:**
 
 * macOS 10.12
-* Xcode 8.3, Swift 3
+* Xcode 9, Swift 4
 
 **Steps:**
 
