@@ -10,7 +10,7 @@ let executableName = URL(fileURLWithPath: CommandLine.arguments[0]).lastPathComp
 
 Output.printStdOut(message: "\(executableName) \(Constants.version)")
 
-guard CommandLine.argc == 2 else {
+guard CommandLine.argc >= 2 else {
     Help.printShortHelp(executableName: executableName)
     exit(EXIT_SUCCESS)
 }
@@ -32,7 +32,7 @@ if CommandLine.arguments[1] == "--create-configfile" {
         try sampleConfig.write(to: destinationUrl, atomically: true, encoding: String.Encoding.utf8)
     } catch let error {
         var errorMessage = ""
-        errorMessage += "Failed to create config-gile at\n"
+        errorMessage += "Failed to create config-file at\n"
         errorMessage += "    \(destinationUrl.path)\n"
         errorMessage += "\(error)"
         Output.printStdErr(message: errorMessage)
@@ -45,8 +45,21 @@ if CommandLine.arguments[1] == "--create-configfile" {
 
 //Output.debugOutputEnabled = true
 
-let generator = epubgen()
-let configFileURL = URL(fileURLWithPath: CommandLine.arguments[1])
+let generator: epubgen
+let configFileURL: URL
+if CommandLine.arguments[1] == "--epub2" {
+    if CommandLine.arguments.count == 2 {
+        var errorMessage = ""
+        errorMessage += "Config file not defined"
+        exit(EXIT_FAILURE)
+    }
+    generator = epub2gen()
+    configFileURL = URL(fileURLWithPath: CommandLine.arguments[2])
+} else {
+    generator = epub3gen()
+    configFileURL = URL(fileURLWithPath: CommandLine.arguments[1])
+}
+
 generator.generateEpub(withConfig: configFileURL) { () in
     semaphore.signal()
 }

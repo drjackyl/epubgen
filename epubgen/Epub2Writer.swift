@@ -5,28 +5,28 @@ import Foundation
 
 
 /**
- Capable of writing EPUB-data to the filesystem.
+ Capable of writing EPUB2-data to the filesystem.
  */
-class EpubWriter {
+class Epub2Writer {
     
     /**
      Initialize the writer with the given Epub, destination and optionally files to include in the EPUB
      
-     The EpubWriter will create an EPUB-conform structure with metadata-files. The inclusion of existing files into the
-     created package can optionally be induced by providing an array of `EpubFileInclude`s. If provided, the EpubWriter
-     will copy these files to the destination.
+     The Epub2Writer will create an EPUB2-conform structure with metadata-files. The inclusion of existing files into
+     the created package can optionally be induced by providing an array of `EpubFileInclude`s. If provided, the
+     Epub2Writer will copy these files to the destination.
      
      - Important: Providing an array of `EpubFileInclude`s will not automatically add these files to the EPUB's
-       metadata (manifest and/or spine of content.opf, toc.xhtml).
+       metadata (manifest, spine and/or guide of content.opf, toc.ncx).
      
-       Furthermore the EpubWriter will not validate, whether all referenced files are present in the manifest. The user
+       Furthermore the Epub2Writer will not validate, whether all referenced files are present in the manifest. The user
        of the writer has to make sure, the EPUB's metadata and provided files are arranged correctly.
      
-     - Parameter epub: The Epub-instance to write.
+     - Parameter epub: The Epub2-instance to write.
      - Parameter destination: The URL to write the EPUB to.
      - Parameter filesToInclude: Optional files to include in the EPUB.
      */
-    init(epub: Epub, destination: URL, filesToInclude: [EpubFileInclude] = [EpubFileInclude]()) {
+    init(epub: Epub2, destination: URL, filesToInclude: [EpubFileInclude] = [EpubFileInclude]()) {
         self.epub = epub
         self.destination = destination
         self.packageFolderUrl = destination.appendingPathComponent(epub.containerXml.packageFilePath).deletingLastPathComponent()
@@ -65,12 +65,12 @@ class EpubWriter {
     
     // MARK: - Private
     
-    fileprivate let epub: Epub
+    fileprivate let epub: Epub2
     fileprivate let destination: URL
     fileprivate let packageFolderUrl: URL
     fileprivate var filesToInclude: [EpubFileInclude]
     
-    fileprivate let dispatchQueue = DispatchQueueFactory.CreateDispatchQueue(component: "\(EpubWriter.self)")
+    fileprivate let dispatchQueue = DispatchQueueFactory.CreateDispatchQueue(component: "\(Epub2Writer.self)")
     fileprivate let fileIO = FileManager()
     
     fileprivate func createEpubScaffolding() throws {
@@ -92,9 +92,9 @@ class EpubWriter {
         let contentOpfData = epub.contentOpf.convertToXmlDocument().xmlData(options: XMLNode.Options(rawValue: XMLNode.Options.RawValue(Int(XMLNode.Options.nodePrettyPrint.rawValue))))
         try contentOpfData.write(to: contentOpfUrl, options: Data.WritingOptions.atomic)
         
-        let tocXhtmlUrl = packageFolderUrl.appendingPathComponent(epub.contentOpf.manifest.navItemHref)
-        let tocXhtmlData = epub.tocXhtml.convertToXmlDocument().xmlData(options: XMLNode.Options(rawValue: XMLNode.Options.RawValue(Int(XMLNode.Options.nodePrettyPrint.rawValue))))
-        try tocXhtmlData.write(to: tocXhtmlUrl, options: Data.WritingOptions.atomic)
+        let tocNcxUrl = packageFolderUrl.appendingPathComponent(epub.tocNcx.filename)
+        let tocNcxData = epub.tocNcx.convertToXmlDocument().xmlData(options: XMLNode.Options(rawValue: XMLNode.Options.RawValue(Int(XMLNode.Options.nodePrettyPrint.rawValue))))
+        try tocNcxData.write(to: tocNcxUrl, options: Data.WritingOptions.atomic)
     }
     
     fileprivate func writeContentFiles() throws {
@@ -123,36 +123,6 @@ class EpubWriter {
         }
         
         try self.fileIO.createDirectory(at: parentFolderUrl, withIntermediateDirectories: true, attributes: nil)
-    }
-    
-}
-
-
-
-
-
-/**
- Provides the url of a file to include in the EPUB at the given path in the package.
- */
-struct EpubFileInclude {
-    
-    /// The url of the file to include in the package.
-    let fileUrl: URL
-    
-    /// The path in the package to copy the file to.
-    let pathInPackage: String
-    
-    /**
-     Initializes the include with the given URL and path in the package
-     
-     The path in the package is the path relative to the folder containing the OEBPS-package-file (content.opf).
-     
-     - Parameter url: The URL of the file to include in the packge.
-     - Parameter path: The path in the package to copy the file to.
-     */
-    init(fileAt url: URL, pathInPackage path: String) {
-        self.fileUrl = url
-        self.pathInPackage = path
     }
     
 }

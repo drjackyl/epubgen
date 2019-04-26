@@ -4,11 +4,12 @@ import Foundation
 
 
 
-class ContentOpf : XmlDocumentConvertible {
+class ContentOpfEpub2 : XmlDocumentConvertible {
     
-    let metadata = ContentOpfMetadata()
+    let metadata = ContentOpfMetadataEpub2()
     let manifest = ContentOpfManifest()
-    let spine = ContentOpfSpine()
+    let spine = ContentOpfSpineEpub2()
+    let guide = ContentOpfGuide()
     
     
     
@@ -29,30 +30,16 @@ class ContentOpf : XmlDocumentConvertible {
     fileprivate func createPackageElement() -> XMLElement {
         let packageAttributes = [
             XMLNode.attribute(name: "xmlns", value: "http://www.idpf.org/2007/opf"),
-            XMLNode.attribute(name: "unique-identifier", value: ContentOpf.uniqueIdentifier),
-            XMLNode.attribute(name: "version", value: "3.0"),
-            XMLNode.attribute(name: "prefix", value: "rendition: http://www.idpf.org/vocab/rendition/#")
+            XMLNode.attribute(name: "unique-identifier", value: "bookid"),
+            XMLNode.attribute(name: "version", value: "2.0")
         ]
         
         return XMLElement(name: "package",
                           children: [metadata.convertToXmlNode(),
                                      manifest.convertToXmlNode(),
-                                     spine.convertToXmlNode()],
+                                     spine.convertToXmlNode(),
+                                     guide.convertToXmlNode()],
                           attributes: packageAttributes)
-    }
-    
-}
-
-
-
-
-
-extension ContentOpf {
-    
-    static let uniqueIdentifier = "bookid"
-    
-    class func createItemUUID() -> String {
-        return "id-" + UUID().uuidString
     }
     
 }

@@ -11,6 +11,7 @@ class Help {
         
         help += "usage:\n"
         help += "    \(executableName) <config-file-name>\n"
+        help += "    \(executableName) --epub2 <config-file-name>\n"
         help += "\n"
         help += "    \(executableName) --create-configfile\n"
         help += "\n"
@@ -25,6 +26,7 @@ class Help {
         
         help += "usage:\n"
         help += "    \(executableName) <config-file-name>\n"
+        help += "    \(executableName) --epub2 <config-file-name>\n"
         help += "\n"
         help += "    \(executableName) --create-configfile\n"
         help += "\n"
