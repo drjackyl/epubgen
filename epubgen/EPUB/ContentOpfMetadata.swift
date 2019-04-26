@@ -27,7 +27,7 @@ class ContentOpfMetadata : XmlNodeConvertible {
             XMLElement(name: "dc:description", stringValue: dcDescription),
             XMLElement(name: "dc:identifier",
                        stringValue: dcIdentifier,
-                       attributes: [XMLNode.attribute(name: "id", value: "bookid")]),
+                       attributes: [XMLNode.attribute(name: "id", value: ContentOpf.uniqueIdentifier)]),
             XMLElement(name: "dc:language", stringValue: dcLanguage),
             XMLElement(name: "dc:rights", stringValue: dcRights),
             XMLElement(name: "dc:title", stringValue: dcTitle),
